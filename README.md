@@ -14,3 +14,5 @@ My neovim configuration
 * <leader>oi to organize import(only js,ts,jsx,ts files)
 * :Mason to manage which language-server/linter/...
 * :ESLintFixAll to format using eslint
+
+## If `require` inside `use` doesnt work, try run `:PackerSync`
