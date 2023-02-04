@@ -10,5 +10,7 @@ My neovim configuration
 * ++ to toggle comment
 * <Ctrl-p> to toggle file search
 * <Ctrl-b> to toggle file tree, (press i to show hidden files)
-* Leader sw to search for word (node_modules is ignored)
+* <leader>sw to search for word (node_modules is ignored)
+* <leader>oi to organize import(only js,ts,jsx,ts files)
 * :Mason to manage which language-server/linter/...
+* :ESLintFixAll to format using eslint

@@ -387,6 +387,24 @@ local on_attach = function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
+  local JSFileTypes = {
+    ['javascript'] = true,
+    ['typescript'] = true,
+    ['javascriptreact'] = true,
+    ['typescriptreact'] = true,
+  }
+
+  local function is_js(ftype)
+    return JSFileTypes[ftype]
+  end
+
+  nmap('<leader>oi', function()
+    if is_js(vim.bo.filetype) then
+      print('Organized imports')
+    vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})
+    end
+  end, '[O]ganize [I]mports')
+
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
@@ -401,7 +419,7 @@ end
 local servers = {
    gopls = {},
    pyright = {},
-   tsserver = {}
+   tsserver = {},
 }
 
 -- Setup neovim lua configuration
