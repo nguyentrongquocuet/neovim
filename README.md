@@ -2,7 +2,8 @@
 **My neovim configuration**
 
 # Leader: `<space>`
-
+# Requirements:
+* ripgrep: for search work to work
 # Special keymap:
 ## Movement
 * `<Tab>` to go to corresponding tag
@@ -14,5 +15,6 @@
 * `<leader>oi` to organize import(only js,ts,jsx,ts files)
 * `:Mason` to manage which language-server/linter/...
 * `:ESLintFixAll` to format using eslint
+* `:Telescope <command>` to use Telescope, eg: `:Telescope buffers`
 
 ## If `require` inside `use` doesnt work, try run `:PackerSync`
